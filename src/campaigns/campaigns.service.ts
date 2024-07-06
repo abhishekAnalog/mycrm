@@ -36,7 +36,6 @@ export class CampaignsService {
 
   async getCampaignPerformance(campaignId: string): Promise<any> {
     const accessToken =
-      process.env.META_ACCESS_TOKEN ??
       'EAAXzG49u7ZC0BO87DELqEr6WrOZAOLSPtuV1NViRb4pe7XlUbQAs1YuziZBOY4FKZBGx4CS6n9WjQwIIIfnvGHxK7wB5CW9EbLY8Bh8Miz47cKTqRJt9I5zZChJ6qnS2QaAfYAoroQ2lzw5l8XDbcPurfLquU8iIPr8dtBCSmOeUthGrE41I12xRupgR0Qopyvg7BCcdXCcdSCGO7VdbsQN5YPGNTV8m71nYb7hkZD';
     const url = `https://graph.facebook.com/v11.0/${campaignId}/insights?access_token=${accessToken}`;
     const response = await this.httpService.get(url).toPromise();

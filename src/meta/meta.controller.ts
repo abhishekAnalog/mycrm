@@ -11,7 +11,10 @@ export class MetaController {
     @Query('hub.challenge') challenge: string,
   ) {
     console.log('verifyToken', verifyToken);
-    if (verifyToken === process.env.META_VERIFY_TOKEN) {
+    if (
+      verifyToken ===
+      'EAAXzG49u7ZC0BO87DELqEr6WrOZAOLSPtuV1NViRb4pe7XlUbQAs1YuziZBOY4FKZBGx4CS6n9WjQwIIIfnvGHxK7wB5CW9EbLY8Bh8Miz47cKTqRJt9I5zZChJ6qnS2QaAfYAoroQ2lzw5l8XDbcPurfLquU8iIPr8dtBCSmOeUthGrE41I12xRupgR0Qopyvg7BCcdXCcdSCGO7VdbsQN5YPGNTV8m71nYb7hkZD'
+    ) {
       return challenge;
     } else {
       return 'Verification token mismatch';

@@ -9,8 +9,7 @@ import { MetaModule } from './meta/meta.module';
   imports: [
     ConfigModule.forRoot(),
     MongooseModule.forRoot(
-      process.env.MONGO_URI ??
-        'mongodb+srv://aryan_analog:UMMp41nqrYFRer9J@nestjs.l7nkikk.mongodb.net/nestjs-crm',
+      'mongodb+srv://aryan_analog:UMMp41nqrYFRer9J@nestjs.l7nkikk.mongodb.net/nestjs-crm',
     ),
     LeadsModule,
     MetaModule,

@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { LeadsService } from '../leads/leads.service';
-import axios from 'axios';
 import * as crypto from 'crypto';
 import { HttpService } from '@nestjs/axios';
 
@@ -32,7 +31,7 @@ export class MetaService {
   async sendEvent(event: any): Promise<any> {
     console.log(event.user_data.em, 'event');
 
-    const url = `https://graph.facebook.com/v20.0/${process.env.FACEBOOK_PIXEL_ID}/events`;
+    const url = `https://graph.facebook.com/v20.0/3343257409270389/events`;
     console.log(url, 'ur');
     const requestData = {
       // em: hashedEmail,
@@ -52,7 +51,8 @@ export class MetaService {
     };
     const data = {
       data: [requestData],
-      access_token: process.env.FACEBOOK_ACCESS_TOKEN,
+      access_token:
+        'EAAXzG49u7ZC0BO1ZBknNrj9Os2E24T6qHXbhMNu7N6vIZAwidZBEbvxB9kcLA6ozBAVZCSnyhVtp4AZB5rzIoba7lSPhSEdytEXhPVXvYXMZC1ZBNlAtNqOLw2ZAzmkWiQBsoJxX7lU6gI8CGp30yZAmq68avK20QqVFsb95AME3wptPPhVhklZCMAKkhLbZBHA0GEl63p4ykzTSZCR7ylxePsZBPsCg2GJ3CbJn1EFgZDZD',
     };
     console.log(data);
     try {
