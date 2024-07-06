@@ -24,4 +24,9 @@ export class MetaController {
     await this.metaService.processLeadgenData(leadgenData);
     return 'EVENT_RECEIVED';
   }
+
+  @Post('event')
+  async sendEvent(@Body() event: any) {
+    return this.metaService.sendEvent(event);
+  }
 }
