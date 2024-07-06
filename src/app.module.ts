@@ -8,7 +8,10 @@ import { MetaModule } from './meta/meta.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(process.env.MONGO_URI),
+    MongooseModule.forRoot(
+      process.env.MONGO_URI ??
+        'mongodb+srv://aryan_analog:UMMp41nqrYFRer9J@nestjs.l7nkikk.mongodb.net/nestjs-crm',
+    ),
     LeadsModule,
     MetaModule,
     CampaignsModule,
